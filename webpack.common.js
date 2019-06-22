@@ -1,34 +1,34 @@
-const path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
-    vendor: "./src/assets/js/vendor/vendor.js"
+    main: './src/index.js',
+    vendor: './src/assets/js/vendor/vendor.js'
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: ["html-loader"]
+        use: ['html-loader']
       },
       {
         test: /\.js$/,
         exclude: '/node_modules/',
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ['@babel/preset-env']
           }
         }
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "img"
+            name: '[name].[hash].[ext]',
+            outputPath: 'img'
           }
         }
       }

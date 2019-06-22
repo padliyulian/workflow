@@ -4,6 +4,8 @@ front end workflow
 - babel preset
 - autoprefixer
 - minify
+- html loader
+- file loader
 ``` bash
 # install dependencies
 $ npm install
