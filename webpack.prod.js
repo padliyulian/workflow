@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
@@ -45,7 +45,6 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader, //4. Extract css into files
           'css-loader', //3. Turns css into commonjs
