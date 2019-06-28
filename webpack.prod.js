@@ -4,13 +4,29 @@ const merge = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
+const htmlFiles = ['index', 'features', 'about'];
+
+const multiplesFiles = htmlFiles.map(function (entryName) {
+  return new HtmlWebpackPlugin({
+    filename: `${entryName}.html`,
+    template: `./src/${entryName}.html`,
+    favicon: './src/assets/img/favicon.png',
+    minify: {
+      removeAttributeQuotes: true,
+      collapseWhitespace: true,
+      removeComments: true
+    }
+  })
+}) 
+
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'source-map',
   output: {
     filename: './js/[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -18,17 +34,12 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new OptimizeCssAssetsPlugin(),
-      new TerserPlugin(),
-      new HtmlWebpackPlugin({
-        template: './src/template.html',
-        favicon: './src/assets/img/favicon.png',
-        minify: {
-          removeAttributeQuotes: true,
-          collapseWhitespace: true,
-          removeComments: true
-        }
-      })
-    ]
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+    ].concat(multiplesFiles)
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: './css/[name].[contentHash].css' }),

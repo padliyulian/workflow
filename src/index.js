@@ -1,3 +1,6 @@
-import { hello } from './assets/js/scrpit.js';
 import './assets/scss/app.scss';
-hello();
+
+import 'jquery';
+import 'popper.js';
+import 'bootstrap';
+import './assets/js/scrpit.js';

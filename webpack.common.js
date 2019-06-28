@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js',
-    vendor: './src/assets/js/vendor/vendor.js'
+    main: './src/index.js'
   },
   module: {
     rules: [
@@ -15,12 +14,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: '/node_modules/',
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        use: 'babel-loader',
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
@@ -31,7 +25,7 @@ module.exports = {
             outputPath: 'img'
           }
         }
-      }
+      },
     ]
   }
 };

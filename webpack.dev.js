@@ -3,6 +3,22 @@ const common = require('./webpack.common');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const HWPConfig = new HtmlWebpackPlugin({
+  file: 'index.html',
+  template: './src/index.html',
+  favicon: './src/assets/img/favicon.png'
+})
+
+const htmlFiles = ['features', 'about'];
+
+const multiplesFiles = htmlFiles.map(function (entryName) {
+  return new HtmlWebpackPlugin({
+    filename: `${entryName}.html`,
+    template: `./src/${entryName}.html`,
+    favicon: './src/assets/img/favicon.png'
+  })
+})  
+
 module.exports = merge(common, {
   mode: 'development',
   output: {
@@ -10,11 +26,8 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/template.html',
-      favicon: './src/assets/img/favicon.png'
-    })
-  ],
+    HWPConfig
+  ].concat(multiplesFiles),
   module: {
     rules: [
       {

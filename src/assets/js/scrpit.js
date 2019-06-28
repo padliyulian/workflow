@@ -1,5 +1,5 @@
-const hello = () => {
-  return console.log('hello dude');
-}
+document.querySelector('body,html').addEventListener('click', () => {
+  console.log('ok');
+})
 
-export { hello };
+const koplak = () => console.log('koplak');

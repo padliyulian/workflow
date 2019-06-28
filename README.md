@@ -2,14 +2,18 @@
 front end workflow
 - sass
 - babel preset
+- file loader
+- html loader
 - autoprefixer
 - minify
-- html loader
-- file loader
+- bootsrap
+- jquery
+- popper.js
+- universe
 ``` bash
 # install dependencies
 $ npm install
 
 # build for production and launch server
 $ npm run build
-$ npm run start
+$ npm start
