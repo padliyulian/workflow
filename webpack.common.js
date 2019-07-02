@@ -12,9 +12,18 @@ module.exports = {
         use: ['html-loader']
       },
       {
+        enforce: 'pre',
         test: /\.js$/,
-        exclude: '/node_modules/',
-        use: 'babel-loader',
+        exclude: /node_modules/,
+        loader: 'eslint-loader', 
+        options: {
+          emitWarning: true
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
