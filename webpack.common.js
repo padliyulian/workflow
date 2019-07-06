@@ -1,10 +1,19 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
     main: './src/index.js'
   },
+  plugins: [
+    new StyleLintPlugin({
+      configFile: path.resolve(__dirname, '.stylelintrc'),
+      context: path.resolve(__dirname, './src/assets/scss'),
+      files: '**/*.scss',
+      failOnError: false,
+      quiet: false,
+    }),
+  ],
   module: {
     rules: [
       {
