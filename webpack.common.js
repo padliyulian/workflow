@@ -3,7 +3,10 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    jquery: './src/assets/js/vendor/jquery.js',
+    popper: './src/assets/js/vendor/popper.js',
+    bootstrap: './src/assets/js/vendor/bootstrap.js',
+    main: './src/index.js',
   },
   plugins: [
     new StyleLintPlugin({

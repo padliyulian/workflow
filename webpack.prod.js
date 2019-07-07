@@ -26,7 +26,6 @@ const multiplesFiles = htmlFiles.map(function (entryName) {
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'source-map',
   output: {
     filename: './js/[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -37,7 +36,6 @@ module.exports = merge(common, {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true,
       }),
     ].concat(multiplesFiles)
   },

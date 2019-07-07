@@ -21,6 +21,7 @@ const multiplesFiles = htmlFiles.map(function (entryName) {
 
 module.exports = merge(common, {
   mode: 'development',
+  devtool: 'inline-source-map',
   output: {
     filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
