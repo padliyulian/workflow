@@ -3,7 +3,7 @@
     "stylelint-scss"
   ],
   "rules": {
-    "at-rule-no-unknown": true,
+    "scss/at-rule-no-unknown": true,
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "comment-no-empty": true,
@@ -34,18 +34,6 @@
     "selector-type-no-unknown": true,
     "string-no-newline": true,
     "unit-no-unknown": true,
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "blockless-after-same-name-blockless",
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always-single-line",
     "at-rule-semicolon-newline-after": "always",
@@ -93,21 +81,8 @@
     "declaration-colon-newline-after": "always-multi-line",
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
-    "declaration-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "after-declaration",
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment",
-          "inside-single-line-block"
-        ]
-      }
-    ],
     "function-comma-newline-after": "always-multi-line",
-    "function-comma-space-after": "always-single-line",
+    "function-comma-space-after": "never",
     "function-comma-space-before": "never",
     "function-max-empty-lines": 0,
     "function-name-case": "lower",
@@ -132,24 +107,12 @@
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "property-case": "lower",
-    "rule-empty-line-before": [
-      "always-multi-line",
-      {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-descendant-combinator-no-non-space": true,
-    "selector-list-comma-newline-after": "always",
     "selector-list-comma-space-before": "never",
     "selector-max-empty-lines": 0,
     "selector-pseudo-class-case": "lower",
