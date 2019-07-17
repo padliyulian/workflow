@@ -20,6 +20,15 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.twig/,
+        loader: 'htmlhint-loader',
+        exclude: /node_modules/,
+        options: {
+          configFile: '.htmlhintrc'
+        }
+      },
+      {
         test: /\.twig$/,
         use: [
           'html-loader',
