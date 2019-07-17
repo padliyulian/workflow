@@ -20,8 +20,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: ['html-loader']
+        test: /\.twig$/,
+        use: [
+          'html-loader',
+          {
+            loader: 'twig-html-loader',
+            options: {
+              namespaces: {
+                'layouts': './src/assets/templates/layouts',
+                'pages': './src/assets/templates/pages',
+              }
+            }
+          }
+        ]
       },
       {
         enforce: 'pre',

@@ -14,7 +14,7 @@ const htmlFiles = ['index', 'features', 'about'];
 const multiplesFiles = htmlFiles.map(function (entryName) {
   return new HtmlWebpackPlugin({
     filename: `${entryName}.html`,
-    template: `./src/${entryName}.html`,
+    template: `./src/assets/templates/pages/${entryName}.twig`,
     favicon: './src/assets/img/favicon.png',
     minify: {
       removeAttributeQuotes: true,
