@@ -28,7 +28,7 @@ module.exports = {
             options: {
               namespaces: {
                 'layouts': './src/assets/templates/layouts',
-                'pages': './src/assets/templates/pages',
+                'components': './src/assets/templates/components',
               }
             }
           }
