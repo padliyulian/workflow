@@ -1,11 +1,12 @@
 {
   "name": "workflow",
   "version": "1.0.0",
-  "description": "web dev workflow",
+  "description": "front-end workflow",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server  --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "htmlhint" : "node_modules/.bin/htmlhint --config .htmlhintrc src/**/*.twig"
   },
   "browserslist": [
     "last 1 version",

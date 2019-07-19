@@ -1,19 +1,29 @@
 ## Build Setup
 front end workflow
-- sass
+- sass (BEM method, DRY, KISS)
 - babel preset
 - file loader
 - html loader
-- autoprefixer
+- twig loader
+- html hint
+- eslint
+- stylelint
+- autoprefixer postCSS
 - minify
 - bootsrap
 - jquery
 - popper.js
 - universe
+
 ``` bash
 # install dependencies
 $ npm install
 
 # build for production and launch server
 $ npm run build
-$ npm start
+
+# start server mode development
+$ npm run start
+
+# hint html, twig file
+$ npm run htmlhint
